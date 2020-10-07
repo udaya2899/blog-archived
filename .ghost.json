@@ -1,10 +1,10 @@
 {
   "development": {
-    "apiUrl": "https://gatsby.ghost.io",
-    "contentApiKey": "9cc5c67c358edfdd81455149d0"
+    "apiUrl": "https://udaya-blog.herokuapp.com",
+    "contentApiKey": "d95a3f46e96c3b69587d338408"
   },
   "production": {
-    "apiUrl": "https://gatsby.ghost.io",
-    "contentApiKey": "9cc5c67c358edfdd81455149d0"
+    "apiUrl": "https://udaya-blog.herokuapp.com",
+    "contentApiKey": "d95a3f46e96c3b69587d338408"
   }
 }
