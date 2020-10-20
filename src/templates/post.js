@@ -15,6 +15,8 @@ import { MetaData } from '../components/common/meta'
 const Post = ({ data, location }) => {
     const post = data.ghostPost
 
+    console.log({ data })
+
     return (
         <>
             <MetaData
@@ -28,20 +30,32 @@ const Post = ({ data, location }) => {
             <Layout>
                 <div className="container">
                     <article className="content">
-                        { post.feature_image ?
+                        {post.feature_image ?
                             <figure className="post-feature-image">
-                                <img src={ post.feature_image } alt={ post.title } />
-                            </figure> : null }
+                                <img src={post.feature_image} alt={post.title} />
+                            </figure> : null}
                         <section className="post-full-content">
                             <h1 className="content-title">{post.title}</h1>
 
-                            {/* The main post content */ }
+                            {/* The main post content */}
                             <section
                                 className="content-body load-external-scripts"
                                 dangerouslySetInnerHTML={{ __html: post.html }}
                             />
                         </section>
                     </article>
+                    <header className="author-footer">
+                        <div className="author-footer-content">
+                            <h2>{post.primary_author.name}</h2>
+                            {post.primary_author.bio && <p>{post.primary_author.bio}</p>}
+                            <div className="author-footer-meta">
+                                {post.primary_author.website && <a className="author-footer-item" href={post.primary_author.website} target="_blank" rel="noopener noreferrer">LinkedIn</a>}
+                            </div>
+                        </div>
+                        <div className="author-footer-image">
+                            {post.primary_author.profile_image && <img src={post.primary_author.profile_image} alt={post.primary_author.name} />}
+                        </div>
+                    </header>
                 </div>
             </Layout>
         </>
