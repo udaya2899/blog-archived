@@ -38,6 +38,14 @@ module.exports = {
         siteUrl: process.env.SITEURL || config.siteUrl,
     },
     plugins: [
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                trackingId: "UA-180979375-1",
+                // Defines where to place the tracking script - `true` in the head and `false` in the body
+                head: true,
+            }
+        },
         /**
          *  Content Plugins
          */
